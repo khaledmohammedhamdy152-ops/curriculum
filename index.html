@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0f766e">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>مساعد المنهج</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="chat" class="screen">
+  <header>
+    <h1>مساعد المنهج</h1>
+    <button id="openSettings" aria-label="الإعدادات">⚙️</button>
+  </header>
+  <main id="msgs"></main>
+  <form id="form">
+    <textarea id="q" rows="1" placeholder="اكتب سؤالك هنا..."></textarea>
+    <button id="send" type="submit" aria-label="إرسال">➤</button>
+  </form>
+</section>
+
+<section id="settings" class="screen hidden">
+  <header>
+    <button id="back" aria-label="رجوع">→</button>
+    <h1>الإعدادات</h1>
+  </header>
+  <main class="pad">
+    <h2>قاعدة البيانات</h2>
+    <p class="hint">أضف كتب المنهج بصيغة PDF. تُحفظ على الهاتف وتعمل بدون إنترنت.</p>
+    <label class="btn" for="file">＋ إضافة كتاب</label>
+    <input id="file" type="file" accept="application/pdf" hidden>
+    <div id="progress" class="hidden">
+      <div id="pname"></div>
+      <div class="bar"><div id="fill"></div></div>
+      <div id="ptext"></div>
+    </div>
+    <ul id="books"></ul>
+  </main>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
